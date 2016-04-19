@@ -1,2 +1,2 @@
 # bl-admin-web
-contenido
+cliente html5 de bl-admin
