@@ -57,11 +57,6 @@ myApp.config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push(function () {
             return {
                 request: function (config) {
-                    // test for /comments?filters={post_id:XXX}
-                    if (/\/file$/.test(config.url) && config.params && config.params._filters && config.params._filters.application_id) {
-                        config.url = config.url.replace('file', 'application/' + config.params._filters.application_id + '/files');
-                        delete config.params._filters.application_id;
-                    }
                     if (/\/script$/.test(config.url) && config.params && config.params._filters && config.params._filters.script_id) {
                         config.url = config.url.replace('script', 'application/' + config.params._filters.script_id + '/scripts');
                         delete config.params._filters.script_id;
